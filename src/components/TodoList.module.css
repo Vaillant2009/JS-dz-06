@@ -1,1 +1,21 @@
-.list{display:grid;gap:10px}.empty{text-align:center;color:#94a3b8;border:1px dashed #dbe2ef;border-radius:14px;padding:28px 12px;background:#fbfcff}
+.list {
+  display: grid;
+  gap: 10px;
+  list-style: none;
+}
+
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  text-align: center;
+  color: #64748b;
+  border: 1px dashed #cbd5e1;
+  border-radius: 16px;
+  padding: 34px 12px;
+  background: #fbfcff;
+}
+
+.empty strong { color: #334155; }
+.empty p { font-size: 0.86rem; }
+.emptyIcon { font-size: 1.8rem; }

@@ -6,15 +6,39 @@ import { Counter } from './components/Counter';
 import { TodoList } from './components/TodoList';
 import type { Priority, Task } from './types';
 
-const initialTasks:Task[]=[
- {id:1,text:'Підготувати домашнє завдання з React',priority:'high',deadline:'2026-11-25T18:00',completed:false},
- {id:2,text:'Повторити CSS Modules',priority:'normal',deadline:'',completed:true}
+const initialTasks: Task[] = [
+  { id: 1, text: 'Підготувати презентацію з React', priority: 'high', deadline: '2026-11-20T18:00', completed: false },
+  { id: 2, text: 'Повторити CSS Modules', priority: 'normal', deadline: '2026-11-28T12:00', completed: false },
+  { id: 3, text: 'Відправити звіт по практичному завданню', priority: 'low', deadline: '', completed: true },
 ];
-export default function App(){
- const[tasks,setTasks]=useState<Task[]>(initialTasks);
- function addTask(text:string,priority:Priority,deadline:string){setTasks(current=>[...current,{id:Date.now(),text,priority,deadline,completed:false}]);}
- function toggleTask(id:number){setTasks(current=>current.map(task=>task.id===id?{...task,completed:!task.completed}:task));}
- function deleteTask(id:number){setTasks(current=>current.filter(task=>task.id!==id));}
- const completedCount=tasks.filter(task=>task.completed).length;
- return <main className={styles.page}><div className={styles.app}><Header count={tasks.length}/><TaskForm onAdd={addTask}/><Counter total={tasks.length} completed={completedCount}/><TodoList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask}/></div></main>;
+
+export default function App() {
+  const [tasks, setTasks] = useState<Task[]>(initialTasks);
+
+  function addTask(text: string, priority: Priority, deadline: string) {
+    setTasks((current) => [...current, { id: Date.now(), text, priority, deadline, completed: false }]);
+  }
+
+  function toggleTask(id: number) {
+    setTasks((current) => current.map((task) =>
+      task.id === id ? { ...task, completed: !task.completed } : task,
+    ));
+  }
+
+  function deleteTask(id: number) {
+    setTasks((current) => current.filter((task) => task.id !== id));
+  }
+
+  const completedCount = tasks.filter((task) => task.completed).length;
+
+  return (
+    <main className={styles.page}>
+      <div className={styles.app}>
+        <Header count={tasks.length} />
+        <TaskForm onAdd={addTask} />
+        <Counter total={tasks.length} completed={completedCount} />
+        <TodoList tasks={tasks} onToggle={toggleTask} onDelete={deleteTask} />
+      </div>
+    </main>
+  );
 }

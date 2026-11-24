@@ -6,4 +6,5 @@ export interface Task {
   priority: Priority;
   deadline: string;
   completed: boolean;
+  isOverdue?: boolean;
 }
