@@ -1,0 +1,3 @@
+- [x] React + TypeScript project initialized
+- [x] Implement and verify Todo App
+- [ ] Push changes to GitHub

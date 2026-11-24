@@ -1,0 +1,1 @@
+.header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px}.title{font-size:clamp(1.65rem,5vw,2.15rem);letter-spacing:-.04em}.badge{flex:0 0 auto;padding:7px 12px;border-radius:999px;color:#4f46e5;background:#eef2ff;border:1px solid #c7d2fe;font-size:.82rem;font-weight:800}
