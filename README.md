@@ -1,11 +1,21 @@
-# Todo App — Домашнє завдання №6
+# Task List — Домашнє завдання №7
 
-React + TypeScript Todo-додаток із CSS Modules.
+Декомпонований React + TypeScript додаток із ізольованою стилізацією CSS Modules.
 
-## Запуск
+## Реалізовано
+
+- компоненти `Header`, `TaskForm`, `Counter`, `TodoList`, `TodoItem`, `App`;
+- пріоритети `low`, `normal`, `high`;
+- виконані й прострочені завдання;
+- статистика та горизонтальний прогрес;
+- адаптивний інтерфейс;
+- глобальний `index.css` містить лише базові reset-правила.
+
+## Перевірка
 
 ```bash
 npm install
-npm run dev
+npm run lint
 npm run build
+npm run dev
 ```
